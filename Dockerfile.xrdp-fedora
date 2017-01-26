@@ -14,7 +14,7 @@ RUN yum -y groupinstall "GNOME Desktop" "Graphical Administration Tools" && \
     yum  --enablerepo=epel -y install \
     supervisor \
     xrdp \
-    && dnf clean all
+    && yum clean all
 
 
 RUN useradd foo && \
