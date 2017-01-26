@@ -1,6 +1,11 @@
 FROM alpine:3.4
 
-RUN apk add --no-cache \
+RUN apk add --no-cache -X http://dl-4.alpinelinux.org/alpine/edge/testing \
+      x11vnc \
+      xrdp-git \
+      xrdp-git-xorgxrdp \
+    && \
+	apk add --no-cache \
       lxdm \
       s6 \
       setxkbmap \
@@ -13,11 +18,6 @@ RUN apk add --no-cache \
       xinit \
       xorg-server \
       xvfb \
-    && \
-    apk add --no-cache -X http://dl-4.alpinelinux.org/alpine/edge/testing \
-      x11vnc \
-      xrdp-git \
-      xrdp-git-xorgxrdp \
     && \
     :
 
