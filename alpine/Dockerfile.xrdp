@@ -21,6 +21,9 @@ RUN apk add --no-cache \
     && \
     :
 
+RUN echo root:foobar | chpasswd
+
+
 RUN adduser -D foo && \
     echo "setxkbmap dvorak" >> /home/foo/.xinitrc && \
     echo "exec startxfce4" >> /home/foo/.xinitrc && \
