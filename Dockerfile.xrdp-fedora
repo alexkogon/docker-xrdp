@@ -1,7 +1,8 @@
-FROM centos:7
+FROM docker.io/centos:latest
 
 RUN yum -y update
-RUN yum -y groupinstall 'Xfce Desktop' && \
+
+RUN yum -y "GNOME Desktop" "Graphical Administration Tools" && \
     yum -y install \
     supervisor \
     xrdp \
