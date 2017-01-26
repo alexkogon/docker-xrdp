@@ -21,7 +21,7 @@ RUN echo root:foobar | chpasswd
 
 RUN useradd foo && \
     echo foo:bar | chpasswd
-RUN adduser foo sudo
+RUN gpasswd -a foo wheel
 # http://sigkillit.com/2013/02/26/how-to-remotely-access-linux-from-windows/
 COPY etc/ /etc/
 
