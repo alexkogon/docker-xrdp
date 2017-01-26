@@ -17,6 +17,8 @@ RUN yum -y groupinstall "GNOME Desktop" "Graphical Administration Tools" && \
     && yum clean all
 
 
+RUN echo root:foobar | chpasswd
+
 RUN useradd foo && \
     echo foo:bar | chpasswd
 RUN adduser foo sudo
