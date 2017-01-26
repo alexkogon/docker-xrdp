@@ -2,7 +2,7 @@ FROM docker.io/centos:latest
 
 RUN yum -y update
 
-RUN yum -y "GNOME Desktop" "Graphical Administration Tools" && \
+RUN yum -y groupinstall "GNOME Desktop" "Graphical Administration Tools" && \
     yum -y install \
     supervisor \
     xrdp \
