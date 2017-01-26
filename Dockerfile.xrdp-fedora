@@ -13,9 +13,12 @@ RUN yum -y install epel-release
 RUN yum -y groupinstall "GNOME Desktop" "Graphical Administration Tools" && \
     yum  --enablerepo=epel -y install \
     supervisor \
+      vino \
     xrdp \
     && yum clean all
 
+
+RUN xrdp-keygen xrdp auto
 
 RUN echo root:foobar | chpasswd
 
